@@ -12,7 +12,9 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #003366, #00509e, #007acc);
+      background: linear-gradient(270deg, #003366, #00509e, #007acc);
+      background-size: 600% 600%;
+      animation: gradientShift 20s ease infinite;
       color: #e0e6f3;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -20,31 +22,54 @@
       display: flex;
       flex-direction: column;
     }
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: rgba(0, 64, 128, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 64, 128, 0.85);
+      backdrop-filter: blur(12px);
       padding: 1rem 2rem;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+      transition: background-color 0.3s ease;
+    }
+    header:hover {
+      background: rgba(0, 64, 128, 1);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.6);
     }
     header h1 {
       color: #b3d4fc;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 1.9rem;
+      letter-spacing: 3px;
       cursor: default;
+      text-shadow: 0 0 8px #00d4ff;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+    @keyframes glowText {
+      from {
+        text-shadow: 0 0 10px #00bfff, 0 0 20px #00d4ff;
+        color: #a9d6ff;
+      }
+      to {
+        text-shadow: 0 0 25px #00eaff, 0 0 40px #00bfff;
+        color: #cce9ff;
+      }
     }
     nav a {
       color: #c0d9ff;
-      margin-left: 1.8rem;
+      margin-left: 2rem;
       font-weight: 600;
       text-decoration: none;
       position: relative;
+      font-size: 1.1rem;
       transition: color 0.3s ease;
     }
     nav a::after {
@@ -53,26 +78,207 @@
       bottom: -5px;
       left: 0;
       width: 0;
-      height: 2px;
-      background: #b3d4fc;
+      height: 3px;
+      background: #00d4ff;
+      border-radius: 2px;
       transition: width 0.3s ease;
     }
     nav a:hover {
-      color: #b3d4fc;
+      color: #00eaff;
     }
     nav a:hover::after {
       width: 100%;
     }
     main {
-      margin-top: 80px;
+      margin-top: 90px;
       max-width: 900px;
-      padding: 2rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem 4rem;
       margin-left: auto;
       margin-right: auto;
       flex-grow: 1;
     }
     section {
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       opacity: 0;
-      transform: translateY(30px);
-      transiti
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      font-weight: 800;
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #00bfff;
+      padding-left: 0.8rem;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 5px #00d4ff;
+    }
+    p, ul {
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #cde7ff;
+      letter-spacing: 0.03em;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    ul li {
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    ul li:hover {
+      color: #00eaff;
+      cursor: default;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      color: #99cfff;
+      border-top: 1px solid #224c4c;
+      user-select: none;
+      letter-spacing: 0.04em;
+    }
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: #00bfff;
+      color: #003366;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 1.3rem;
+      box-shadow: 0 10px 25px rgba(0,191,255,0.5);
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+    .btn:hover {
+      background: #00eaff;
+      box-shadow: 0 15px 35px rgba(0,234,255,0.7);
+      transform: translateY(-5px) scale(1.05);
+      color: #002244;
+      cursor: pointer;
+    }
+    .btn.linkedin {
+      background: #0A66C2;
+      box-shadow: 0 10px 25px rgba(10,102,194,0.5);
+      margin-left: 1.5rem;
+      color: white;
+    }
+    .btn.linkedin:hover {
+      background: #005999;
+      box-shadow: 0 15px 35px rgba(0,86,153,0.7);
+      transform: translateY(-5px) scale(1.05);
+      color: #ccf0ff;
+    }
+    /* Responsive */
+    @media (max-width: 720px) {
+      h2 {
+        font-size: 2.2rem;
+      }
+      p, ul {
+        font-size: 1.1rem;
+      }
+      nav a {
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      main {
+        padding: 2rem 1rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muhammad Haris</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a dedicated medical billing specialist with over 3 years of experience in full revenue cycle management, claims processing, denial management, and accounts receivable follow-up. I hold a BS in Information Technology.
+      </p>
+    </section>
+
+    <section id="expertise">
+      <h2>Medical Billing Expertise</h2>
+      <ul>
+        <li>Complete Revenue Cycle Management (RCM)</li>
+        <li>Proficient with software like Kareo, AdvancedMD, Office Ally</li>
+        <li>Handling government insurances including Medicare and Medicaid</li>
+        <li>Expert in denial management and zero balance reviews</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>BS in Information Technology</strong><br />Government College University Faisalabad</p>
+    </section>
+
+    <section id="projects">
+      <h2>Medical Billing Projects</h2>
+      <ul>
+        <li>Completed Billing Cycle for Multiple Multi-specialty Practices</li>
+        <li>Accounts Receivable (AR) Follow-up and Resolution</li>
+        <li>Denial Management including Appeals and Re-submissions</li>
+        <li>Zero Balance Review and Claim Adjustments</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Links</h2>
+      <p>Connect with me professionally or check out my freelance work below:</p>
+      <a href="https://www.fiverr.com/your_fiverr_username" target="_blank" class="btn">My Fiverr Profile</a>
+      <a href="https://www.linkedin.com/in/your_linkedin_profile" target="_blank" class="btn linkedin">LinkedIn Profile</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Muhammad Haris. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll fade-in animation using Intersection Observer
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+    sections.forEach(section => observer.observe(section));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
