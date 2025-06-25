@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Haris | Certified Medical Billing Specialist</title>
     <meta name="description" content="Professional Medical Billing Specialist with 3+ years experience in Revenue Cycle Management (RCM), denial management, and AR follow-up.">
-    <meta name="keywords" content="medical billing specialist, RCM consultant, healthcare revenue cycle, denial management expert, certified medical biller">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +18,7 @@
             --light-gray: #f8fafc;
             --white: #ffffff;
             --success-green: #10b981;
+            --danger-red: #ef4444;
         }
 
         * {
@@ -32,30 +32,33 @@
             background-color: var(--light-gray);
             color: var(--deep-navy);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            line-height: 1.3;
         }
 
         /* Header */
         header {
             position: fixed;
             width: 100%;
-            padding: 1.2rem 5%;
+            padding: 1.5rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 1rem 10%;
+            background-color: rgba(255,255,255,0.95);
+            backdrop-filter: blur(5px);
         }
 
         .logo {
@@ -72,9 +75,19 @@
             font-size: 1.5rem;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--medical-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
@@ -83,73 +96,59 @@
             color: var(--deep-navy);
             font-weight: 500;
             transition: color 0.3s;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--medical-blue);
+            transition: width 0.3s;
         }
 
         nav a:hover {
             color: var(--medical-blue);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--medical-blue);
-            cursor: pointer;
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         #hero {
             min-height: 100vh;
-            padding: 8rem 5% 4rem;
+            padding: 0 10%;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,50,100,0.85), rgba(0,50,100,0.85)), 
-                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,50,100,0.8), rgba(0,50,100,0.8)), 
+                        url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             color: white;
             position: relative;
         }
 
         .hero-content {
             max-width: 800px;
-            text-align: center;
-            margin: 0 auto;
+            animation: fadeInUp 1s ease;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 1.5rem;
         }
 
         .hero-content p {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-size: 1.1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .hero-image {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .hero-image:hover {
-            transform: translateY(-5px);
         }
 
         .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.8rem;
             background: var(--medical-blue);
             color: white;
             border: none;
@@ -157,33 +156,36 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .btn:hover {
-            background: var(--electric-blue);
+            background: var(--cool-blue);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         /* Sections */
         section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            margin-bottom: 3rem;
-            color: var(--medical-blue);
-            text-align: center;
+            padding: 8rem 10%;
             position: relative;
         }
 
-        .section-title:after {
+        .section-title {
+            margin-bottom: 3.5rem;
+            color: var(--medical-blue);
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
             content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--electric-blue);
-            margin: 1rem auto 0;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 70px;
+            height: 3px;
+            background: var(--medical-blue);
         }
 
         /* About Section */
@@ -193,135 +195,230 @@
 
         .about-container {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 3rem;
+            gap: 4rem;
         }
 
-        .about-text {
+        .about-content {
             flex: 1;
-            min-width: 300px;
         }
 
         .about-image {
             flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-
-        .about-main-img {
-            border-radius: 8px;
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .about-img-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 150px;
-            border: 3px solid var(--electric-blue);
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #about p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
         /* Expertise Section */
-        #expertise {
-            background: var(--light-gray);
-        }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .skill-card {
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
             background: var(--white);
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--medical-blue);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--medical-blue);
+            margin-bottom: 1.5rem;
         }
 
         .skill-card h3 {
             color: var(--medical-blue);
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-card h3 i {
-            color: var(--electric-blue);
-        }
-
-        .expertise-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .expertise-img {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 200px;
-            object-fit: cover;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         /* Services Section */
         .services-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-item {
-            padding: 2rem;
-            border-radius: 8px;
-            background: var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--medical-blue);
+            transition: all 0.3s;
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             gap: 2rem;
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--electric-blue);
-            min-width: 60px;
+        .service-item:hover {
+            border-left-color: var(--electric-blue);
+        }
+
+        .service-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--medical-blue);
+            opacity: 0.3;
+            min-width: 40px;
         }
 
         .service-content {
             flex: 1;
-            min-width: 250px;
         }
 
-        .service-content h3 {
+        .service-item h3 {
             color: var(--medical-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .service-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: var(--white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            aspect-ratio: 16/9;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 119, 182, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
             margin-bottom: 0.5rem;
         }
 
-        .services-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
+        /* Testimonials */
+        #testimonials {
+            background: var(--light-gray);
+            text-align: center;
         }
 
-        .service-img {
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
             border-radius: 8px;
-            height: 150px;
-            object-fit: cover;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--medical-blue);
+            opacity: 0.2;
+            position: absolute;
+        }
+
+        .testimonial-content::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-content::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--medical-blue);
+        }
+
+        .author-title {
+            color: var(--deep-navy);
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
 
         /* Contact Section */
@@ -330,12 +427,43 @@
             background: var(--white);
         }
 
-        .contact-links {
+        .contact-options {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            width: 280px;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--medical-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: var(--medical-blue);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .contact-btn {
@@ -346,8 +474,6 @@
             gap: 0.5rem;
             color: white;
             text-decoration: none;
-            min-width: 200px;
-            justify-content: center;
             transition: all 0.3s;
         }
 
@@ -357,61 +483,32 @@
         }
 
         .fiverr-btn {
-            background: #1DBF73;
-        }
-
-        .fiverr-btn:hover {
-            background: #18a962;
+            background: var(--success-green);
         }
 
         .linkedin-btn {
-            background: #0077B5;
-        }
-
-        .linkedin-btn:hover {
-            background: #006096;
-        }
-
-        .contact-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .contact-img {
-            border-radius: 8px;
-            height: 250px;
-            object-fit: cover;
+            background: var(--cool-blue);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 5%;
+            padding: 4rem 10%;
             background: var(--medical-blue);
             color: white;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: inline-block;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .footer-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .footer-links a:hover {
@@ -422,150 +519,102 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin: 1.5rem 0;
+            margin-bottom: 2rem;
         }
 
         .social-links a {
             color: white;
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
             color: var(--electric-blue);
+            transform: translateY(-3px);
         }
 
         .copyright {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
             opacity: 0.8;
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-image-grid,
-            .services-gallery {
-                grid-template-columns: repeat(2, 1fr);
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            .expertise-gallery {
-                grid-template-columns: repeat(2, 1fr);
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            section {
+                padding: 6rem 8%;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header {
+                padding: 1.2rem 5%;
+            }
+            header.scrolled {
+                padding: 0.8rem 5%;
+            }
+            section {
+                padding: 6rem 5%;
             }
         }
 
         @media (max-width: 768px) {
             nav ul {
-                display: none;
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
-
+            nav ul.active {
+                left: 0;
+            }
             .mobile-menu-btn {
                 display: block;
             }
-
-            .hero-image-grid,
-            .expertise-gallery,
-            .services-gallery,
-            .contact-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .about-container {
-                flex-direction: column;
-            }
-
-            .about-img-badge {
-                right: 0;
-                bottom: -40px;
-            }
-
-            .service-item {
-                flex-direction: column;
+            .hero-content {
                 text-align: center;
             }
-
-            .service-icon {
-                margin-bottom: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section-title {
-                font-size: 1.8rem;
-            }
-
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
-
-            .btn,
-            .contact-btn {
-                width: 100%;
+            .service-item {
+                flex-direction: column;
+            }
+            .service-number {
+                margin-bottom: -1rem;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">
-            <i class="fas fa-user-md"></i>
-            <span>Muhammad Haris</span>
-        </a>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Medical Billing & Coding Specialist</h1>
-            <p>Helping healthcare providers maximize revenue through efficient billing solutions and expert Revenue Cycle Management.</p>
-            <a href="#contact" class="btn">Get Started Today</a>
-            
-            <div class="hero-image-grid">
-                <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Medical documents and calculator" class="hero-image">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Doctor reviewing patient files" class="hero-image">
-                <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Healthcare analytics dashboard" class="hero-image">
-                <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Team meeting about healthcare" class="hero-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>I am Muhammad Haris, a passionate and experienced Medical Billing Specialist with over 3 years of hands-on experience in US-based healthcare billing. I specialize in complete Revenue Cycle Management (RCM), denial management, and AR follow-up.</p>
-                <p>I hold a Bachelor's degree in Information Technology and have worked with multiple specialties and platforms. My technical background combined with healthcare billing experience enables me to optimize processes and implement efficient workflows.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Professional portrait" class="about-main-img">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Certification badge" class="about-img-badge">
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise">
-        <h2 class="section-title">My Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fas fa-chart-line"></i> Revenue Cycle Management</h3>
-                <p>Over 3 years of experience in full-cycle RCM encompassing everything from patient registration to final payment posting.</p>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-desktop"></i> Billing Platforms</h3>
-                <p>Proficient with Kareo, AdvancedMD, Office Ally, NextGen, Athenahealth, and other industry-leading platforms.</p>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-file-invoice-dollar"></i> Insurance
+        @media (max-width: 576px) {
+            section {
+                padding: 5rem 2rem;
+            }
+            .section-title
