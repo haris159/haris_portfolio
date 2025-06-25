@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Haris | Medical Billing Specialist</title>
-    <meta name="description" content="Professional medical billing specialist with expertise in RCM, denial management, and AR follow-up">
-    <meta name="keywords" content="medical billing, RCM, revenue cycle management, denial management, AR follow-up">
+    <title>Muhammad Haris | Certified Medical Billing Specialist</title>
+    <meta name="description" content="Professional Medical Billing Specialist with 3+ years experience in Revenue Cycle Management (RCM), denial management, and AR follow-up">
+    <meta name="keywords" content="medical billing, revenue cycle management, RCM, denial management, AR follow-up, Muhammad Haris">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Professional Blue Color Scheme */
-            --primary: #0072bc;  /* Deep Professional Blue */
-            --secondary: #00a0e1; /* Bright Interactive Blue */
-            --accent: #ff6b35;    /* Attention Grabbing Orange */
-            --light: #f8f9fa;     /* Light Background */
-            --dark: #212529;      /* Dark Text */
-            --light-gray: #e9ecef;  /* Lighter Gray */
-            --medium-gray: #adb5bd; /* Medium Gray */
-            --success: #28a745;    /* Green */
-            --warning: #ffc107;    /* Yellow */
+            --primary: #005b96;
+            --primary-light: #107dac;
+            --secondary: #00a0e1;
+            --accent: #ff7e5f;
+            --dark: #2d3436;
+            --light: #f8f9fa;
+            --light-gray: #e9ecef;
+            --success: #2ecc71;
+            --danger: #e74c3c;
         }
 
         * {
@@ -33,60 +32,54 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
             background-color: var(--light);
             overflow-x: hidden;
-        }
-
-        /* Smooth scroll behavior */
-        html {
             scroll-behavior: smooth;
         }
 
-        /* Typography */
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
             line-height: 1.3;
             color: var(--primary);
         }
 
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            position: relative;
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
         }
 
-        h2:after {
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            text-align: center;
+        }
+
+        h2::after {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 70px;
+            left: 50%;
+            bottom: -15px;
+            width: 80px;
             height: 4px;
             background: var(--accent);
+            transform: translateX(-50%);
         }
 
         h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         p {
             margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-size: 1.1rem;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--secondary);
-        }
-
-        /* Layout */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -96,28 +89,22 @@
             padding: 6rem 0;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
         /* Header */
         header {
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
             background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         header.scrolled {
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -130,20 +117,12 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            display: flex;
-            align-items: center;
         }
 
         .logo span {
             color: var(--accent);
         }
 
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
@@ -155,11 +134,12 @@
 
         nav a {
             font-weight: 500;
-            position: relative;
+            color: var(--dark);
             padding: 0.5rem 0;
+            position: relative;
         }
 
-        nav a:after {
+        nav a::after {
             content: '';
             position: absolute;
             left: 0;
@@ -170,11 +150,10 @@
             transition: width 0.3s ease;
         }
 
-        nav a:hover:after {
+        nav a:hover::after {
             width: 100%;
         }
 
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -182,7 +161,6 @@
             font-size: 1.5rem;
             color: var(--primary);
             cursor: pointer;
-            z-index: 1001;
         }
 
         /* Hero Section */
@@ -190,64 +168,69 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(0, 114, 188, 0.9), rgba(0, 160, 225, 0.8)), 
+            background: linear-gradient(135deg, rgba(0, 91, 150, 0.9), rgba(16, 125, 172, 0.8)), 
                         url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
             color: white;
+            padding-top: 80px;
         }
 
         .hero-content {
-            max-width: 700px;
+            max-width: 800px;
         }
 
         .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
             color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
             color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-align: center;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .btn-primary {
             background: var(--accent);
             color: white;
-            border: 2px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--accent);
-            box-shadow: none;
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
         }
 
-        .btn-secondary {
+        .btn-outline {
             background: transparent;
             color: white;
             border: 2px solid white;
             margin-left: 1rem;
         }
 
-        .btn-secondary:hover {
+        .btn-outline:hover {
             background: white;
             color: var(--primary);
-            transform: translateY(-3px);
         }
 
         /* About Section */
@@ -257,172 +240,89 @@
 
         .about-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 4rem;
-        }
-
-        .about-content {
-            flex: 1;
         }
 
         .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
         }
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .about-content {
+            text-align: center;
         }
 
-        /* Expertise Section */
-        #expertise {
-            background: var(--light-gray);
+        /* Skills Section */
+        #skills {
+            background: var(--light);
         }
 
-        .expertise-container {
+        .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-        }
-
-        .expertise-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .expertise-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         /* Services Section */
+        #services {
+            background: var(--light);
+        }
+
         .service-item {
-            margin-bottom: 3rem;
-            padding: 2rem;
             background: white;
+            padding: 2rem;
             border-radius: 8px;
+            margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
         .service-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--light-gray);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover .service-number {
-            color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         /* Contact Section */
         #contact {
             background: var(--primary);
             color: white;
+            text-align: center;
         }
 
-        #contact h2,
+        #contact h2, 
         #contact h3 {
             color: white;
         }
 
-        #contact h2:after {
+        #contact h2::after {
             background: white;
         }
 
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .contact-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
+            margin-bottom: 2rem;
         }
 
         .contact-icon {
             font-size: 2.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            background: white;
-            color: var(--primary);
-            font-weight: 500;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-btn i {
-            margin-right: 0.5rem;
-        }
-
-        .contact-btn:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-3px);
+            margin-bottom: 1rem;
         }
 
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 4rem 0 2rem;
             text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
+            padding: 4rem 0 2rem;
         }
 
         .social-links {
@@ -433,59 +333,11 @@
         }
 
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
             color: white;
-            transition: all 0.3s ease;
+            font-size: 1.5rem;
         }
 
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            section {
-                padding: 4rem 0;
-            }
-
-            .about-container {
-                flex-direction: column;
-            }
-
-            .about-image {
-                margin-top: 2rem;
-                max-width: 500px;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -496,11 +348,10 @@
                 top: 0;
                 right: -100%;
                 width: 80%;
-                max-width: 300px;
                 height: 100vh;
-                background: var(--primary);
-                padding: 5rem 2rem 0;
-                transition: all 0.5s ease;
+                background: white;
+                padding: 6rem 2rem;
+                transition: all 0.4s ease;
             }
 
             nav.active {
@@ -512,36 +363,11 @@
             }
 
             nav li {
-                margin: 0 0 2rem 0;
+                margin: 1rem 0;
             }
 
-            nav a {
-                color: white;
-                font-size: 1.2rem;
-            }
-
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-                display: block;
-            }
-
-            .header-container {
-                padding: 0 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
+            .about-container {
+                flex-direction: column;
             }
         }
     </style>
@@ -550,19 +376,14 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-file-medical-alt"></i>
-                Muhammad <span>Haris</span>
-            </a>
-            
+            <a href="#" class="logo">Muhammad <span>Haris</span></a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            
             <nav id="mainNav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -573,12 +394,12 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
-            <div class="hero-content animate">
-                <h1> Medical Billing Specialist</h1>
+            <div class="hero-content">
+                <h1>Certified Medical Billing Specialist</h1>
                 <p>Helping healthcare providers optimize revenue cycle management with 3+ years of experience in medical billing, denial management, and AR follow-up.</p>
                 <div>
                     <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-secondary">My Services</a>
+                    <a href="#services" class="btn btn-outline">My Services</a>
                 </div>
             </div>
         </div>
@@ -587,39 +408,123 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
+            <h2>About Me</h2>
             <div class="about-container">
-                <div class="about-content animate">
-                    <p>I am Muhammad Haris, a dedicated and detail-oriented Medical Billing Specialist with over 3 years of hands-on experience in US-based healthcare billing and revenue cycle management.</p>
-                    <p>With a Bachelor's degree in Information Technology and specialized training in medical billing, I bring a unique combination of technical expertise and healthcare knowledge to ensure accurate and efficient billing processes.</p>
-                    <p>My work has helped medical practices improve their collections, reduce claim denials by up to 40%, and streamline their billing operations through meticulous attention to detail and proactive account management.</p>
+                <div class="about-image">
+                    <img src="your-profile-image.jpg" alt="Muhammad Haris" class="profile-image">
                 </div>
-                <div class="about-image animate">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional Medical Biller">
+                <div class="about-content">
+                    <p>I am Muhammad Haris, a dedicated Medical Billing Specialist with over 3 years of experience in US healthcare billing and revenue cycle management. I specialize in helping medical practices maximize their revenue through efficient billing processes.</p>
+                    <p>With a background in Information Technology and specialized training in medical coding and billing, I bring a unique combination of technical skills and healthcare knowledge to ensure accurate and timely reimbursements.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise">
+    <!-- Skills Section -->
+    <section id="skills">
         <div class="container">
-            <div class="section-title">
-                <h2>My Expertise</h2>
-            </div>
-            <div class="expertise-container">
-                <div class="expertise-card animate">
-                    <div class="expertise-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+            <h2>My Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-item">
                     <h3>Revenue Cycle Management</h3>
-                    <p>Comprehensive management of the entire revenue cycle from patient registration to final payment collection and reporting.</p>
+                    <p>End-to-end management of patient revenue from registration to final payment collection and reporting.</p>
                 </div>
-                <div class="expertise-card animate">
-                    <div class="expertise-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
+                <div class="skill-item">
+                    <h3>Denial Management</h3>
+                    <p>Analyzing and resolving claim denials to maximize reimbursement rates.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>AR Follow-up</h3>
+                    <p>Proactive follow-up on outstanding claims to minimize aging accounts receivable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>My Services</h2>
+            <div class="services-container">
+                <div class="service-item">
+                    <h3>Patient Registration & Insurance Verification</h3>
+                    <p>Accurate patient data entry and insurance verification to ensure clean claim submissions from day one.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Claims Submission</h3>
+                    <p>Timely electronic claims submission to all major insurance carriers through clearinghouses.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Payment Posting</h3>
+                    <p>Accurate ERA/EOB payment posting and reconciliation of patient balances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Claim Submission</h3>
-                    <p>Accurate and timely submission of claims to insurance companies through various
+                    <h3>Email</h3>
+                    <p><a href="mailto:harrych554@gmail.com">harrych554@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="https://wa.me/923159941945">+92 315 994 1945</a></p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammad-haris19" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.upwork.com/freelancers/~0173b68c2f6a3511ec" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Upwork_logo.svg" alt="Upwork" style="width: 30px; height: 30px;"></a>
+                <a href="https://www.fiverr.com/s/qD3LprZ" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Fiverr_Logo.svg" alt="Fiverr" style="width: 30px; height: 30px;"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Muhammad Haris</h3>
+            <p>Certified Medical Billing Specialist</p>
+            <p class="copyright">© 2023 Muhammad Haris. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('#mainNav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('header').classList.add('scrolled');
+            } else {
+                document.querySelector('header').classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
