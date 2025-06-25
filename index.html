@@ -6,13 +6,6 @@
     <title>Muhammad Haris | Certified Medical Billing Specialist</title>
     <meta name="description" content="Professional Medical Billing Specialist with 3+ years experience in Revenue Cycle Management (RCM), denial management, and AR follow-up.">
     <meta name="keywords" content="medical billing specialist, RCM consultant, healthcare revenue cycle, denial management expert, certified medical biller">
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Muhammad Haris | Medical Billing Specialist">
-    <meta property="og:description" content="Professional Medical Billing Specialist with 3+ years experience in Revenue Cycle Management">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +22,9 @@
             --cool-gray: #94a3b8;
             --electric-blue: #38bdf8;
             --success-green: #10b981;
+            --medical-blue: #0077b6;
+            --medical-light: #e6f2ff;
+            --white: #ffffff;
         }
 
         * {
@@ -59,11 +55,11 @@
             background: var(--light-gray);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--cool-blue);
+            background: var(--medical-blue);
             border-radius: 4px;
         }
 
-        /* Header */
+        /* Header with Medical Theme */
         header {
             position: fixed;
             top: 0;
@@ -73,24 +69,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
+            background-color: var(--white);
             box-shadow: 0 4px 30px rgba(0, 0, 50, 0.1);
             transition: all 0.3s ease;
+            border-bottom: 3px solid var(--medical-blue);
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            color: var(--cool-blue);
+            color: var(--medical-blue);
             font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .logo-icon {
-            color: var(--electric-blue);
+            color: var(--medical-blue);
             font-size: 1.8rem;
+        }
+
+        .logo-name {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-name span:first-child {
+            font-weight: 700;
+            color: var(--medical-blue);
+        }
+
+        .logo-name span:last-child {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--cool-gray);
+            letter-spacing: 0.5px;
         }
 
         /* Navigation */
@@ -110,17 +127,17 @@
         }
 
         nav a:hover {
-            color: var(--cool-blue);
+            color: var(--medical-blue);
         }
 
         nav a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 3px;
             bottom: -5px;
             left: 0;
-            background-color: var(--cool-blue);
+            background-color: var(--medical-blue);
             transition: width 0.3s ease;
         }
 
@@ -132,27 +149,42 @@
             display: none;
             background: none;
             border: none;
-            color: var(--cool-blue);
+            color: var(--medical-blue);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section with Doctor Background */
         #hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
-            background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
             color: white;
-            background-size: 200% 200%;
-            animation: gradient 10s ease infinite;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 50, 100, 0.7);
+            z-index: -1;
         }
 
         .hero-content {
@@ -163,24 +195,27 @@
             font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 1rem;
             line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-content h2 {
             font-size: clamp(1.5rem, 3vw, 2.5rem);
             margin-bottom: 1.5rem;
             font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-content p {
             font-size: 1.1rem;
             margin-bottom: 2rem;
             max-width: 600px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
-            background: var(--electric-blue);
+            background: var(--medical-blue);
             color: white;
             border: none;
             border-radius: 4px;
@@ -191,12 +226,13 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
-            background: var(--cool-blue);
+            background: #0062a3;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .btn:active {
@@ -214,7 +250,7 @@
             left: 0;
             z-index: -1;
             transition: all 0.4s;
-            background-color: var(--electric-blue);
+            background-color: var(--medical-blue);
         }
 
         .btn:hover::after {
@@ -238,7 +274,7 @@
         .section-title {
             position: relative;
             margin-bottom: 3rem;
-            color: var(--cool-blue);
+            color: var(--medical-blue);
             font-size: 2.2rem;
         }
 
@@ -249,11 +285,15 @@
             bottom: -10px;
             width: 70px;
             height: 3px;
-            background-color: var(--cool-blue);
+            background-color: var(--medical-blue);
             border-radius: 3px;
         }
 
         /* About Section */
+        #about {
+            background-color: var(--white);
+        }
+
         #about p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
@@ -261,6 +301,10 @@
         }
 
         /* Expertise Section */
+        #expertise {
+            background-color: var(--light-gray);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -279,10 +323,11 @@
         .skill-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 50, 0.1);
+            border: 1px solid var(--medical-blue);
         }
 
         .skill-card h3 {
-            color: var(--cool-blue);
+            color: var(--medical-blue);
             margin-bottom: 1rem;
             font-size: 1.3rem;
             display: flex;
@@ -299,6 +344,10 @@
         }
 
         /* Services Section */
+        #services {
+            background-color: var(--white);
+        }
+
         .services-container {
             margin-top: 2rem;
         }
@@ -311,13 +360,20 @@
         }
 
         .service-item:hover {
-            border-left-color: var(--electric-blue);
+            border-left-color: var(--medical-blue);
         }
 
         .service-item h3 {
-            color: var(--cool-blue);
+            color: var(--medical-blue);
             margin-bottom: 0.8rem;
             font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-item h3 i {
+            color: var(--success-green);
         }
 
         .service-item p {
@@ -379,16 +435,87 @@
             background: #006096;
         }
 
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--light-gray);
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 50, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--deep-navy);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--medical-blue);
+        }
+
         /* Footer */
         footer {
             text-align: center;
             padding: 3rem;
-            background: var(--deep-navy);
+            background: var(--medical-blue);
             color: white;
         }
 
         footer p {
             margin-bottom: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-blue);
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* Responsive Design */
@@ -458,21 +585,28 @@
             .logo-icon {
                 font-size: 1.5rem;
             }
+            .service-item {
+                padding-left: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Medical Theme -->
     <header id="header">
         <a href="#" class="logo">
             <i class="fas fa-user-md logo-icon"></i>
-            Muhammad Haris
+            <div class="logo-name">
+                <span>Muhammad Haris</span>
+                <span>Medical Billing Specialist</span>
+            </div>
         </a>
         <nav>
             <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="menu-btn">
@@ -481,75 +615,9 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Doctor Background -->
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Medical Billing Specialist</h1>
-                <h2>Revenue Cycle Management Expert</h2>
-                <p>Helping healthcare providers optimize their revenue cycles with specialized medical billing services and denial management solutions.</p>
-                <a href="#contact" class="btn">Get in Touch</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p>I am Muhammad Haris, a passionate and experienced Medical Billing Specialist with over 3 years of hands-on experience in US-based healthcare billing. I specialize in complete Revenue Cycle Management (RCM), denial management, and AR follow-up.</p>
-            <p>I hold a Bachelor's degree in Information Technology and have worked with multiple specialties and platforms. My technical background combined with healthcare billing experience enables me to optimize processes and implement efficient workflows.</p>
-        </section>
-
-        <!-- Expertise Section -->
-        <section id="expertise">
-            <h2 class="section-title">Medical Billing Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><i class="fas fa-chart-line"></i> Revenue Cycle Management</h3>
-                    <p>Over 3 years of experience in full-cycle RCM encompassing everything from patient registration to final payment posting.</p>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-desktop"></i> Billing Platforms</h3>
-                    <p>Proficient with Kareo, AdvancedMD, Office Ally, NextGen, Athenahealth, and other industry-leading platforms.</p>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-file-invoice-dollar"></i> Insurance Handling</h3>
-                    <p>Specialized in government (Medicare, Medicaid) and private (BCBS, UHC, Aetna, etc.) insurance processing.</p>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-clock"></i> AR Follow-up</h3>
-                    <p>Strong skills in accounts receivable management to reduce aging and improve cash flow.</p>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-exclamation-circle"></i> Denial Resolution</h3>
-                    <p>Expert in analyzing denial reasons, correcting claim issues, and submitting effective appeals.</p>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-shield-alt"></i> Compliance</h3>
-                    <p>Excellent understanding of HIPAA compliance and billing workflows to ensure regulatory adherence.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services">
-            <h2 class="section-title">My Medical Billing Services</h2>
-            <div class="services-container">
-                <div class="service-item">
-                    <h3>1. Patient Demographics & Insurance Entry</h3>
-                    <p>Accurate patient data entry and insurance verification to ensure clean claim submissions from day one.</p>
-                </div>
-                <div class="service-item">
-                    <h3>2. Eligibility & Benefits Verification (VOB)</h3>
-                    <p>Real-time insurance verification to confirm coverage and co-pay/deductible status before appointments.</p>
-                </div>
-                <div class="service-item">
-                    <h3>3. Medical Coding & Charge Entry</h3>
-                    <p>Assigning correct CPT, ICD, and modifiers as per clinical documentation and payer requirements.</p>
-                </div>
-                <div class="service-item">
-                    <h3>4. Claim Submission</h3>
-                    <p>Timely and clean electronic claims submission to all major insurance carriers through clearinghouses.</p>
-                </div>
-                <div class="service-item">
-                    <h3>5. Payment Posting</h3>
-                    
+                <h1>Optimizing Healthcare Revenue</h1>
+                <h2>Professional Medical Billing Services</h
