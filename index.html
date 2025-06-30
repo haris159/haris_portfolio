@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Haris | Certified Medical Billing Specialist</title>
-    <meta name="description" content="Professional Medical Billing Specialist with 3+ years experience in Revenue Cycle Management (RCM), denial management, and AR follow-up">
+    <title>Muhammad Haris | Medical Biller</title>
+    <meta name="description" content="Professional Medical Biller with 3+ years experience in Revenue Cycle Management (RCM), denial management, and AR follow-up">
     <meta name="keywords" content="medical billing, revenue cycle management, RCM, denial management, AR follow-up, Muhammad Haris">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -283,6 +283,49 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
+        /* Specialties Section */
+        #specialties {
+            background: var(--light-gray);
+        }
+
+        .specialties-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .specialty-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .specialty-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Load More Button */
+        .load-more {
+            display: block;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .load-more:hover {
+            background: var(--primary-light);
+        }
+
         /* Contact Section */
         #contact {
             background: var(--primary);
@@ -385,6 +428,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#specialties">Specialties</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -395,7 +439,7 @@
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Certified Medical Billing Specialist</h1>
+                <h1>Medical Biller</h1>
                 <p>Helping healthcare providers optimize revenue cycle management with 3+ years of experience in medical billing, denial management, and AR follow-up.</p>
                 <div>
                     <a href="#contact" class="btn btn-primary">Get Started</a>
@@ -414,7 +458,7 @@
                     <img src="your-profile-image.jpg" alt="Muhammad Haris" class="profile-image">
                 </div>
                 <div class="about-content">
-                    <p>I am Muhammad Haris, a dedicated Medical Billing Specialist with over 3 years of experience in US healthcare billing and revenue cycle management. I specialize in helping medical practices maximize their revenue through efficient billing processes.</p>
+                    <p>I am Muhammad Haris, a dedicated Medical Biller with over 3 years of experience in US healthcare billing and revenue cycle management. I specialize in helping medical practices maximize their revenue through efficient billing processes.</p>
                     <p>With a background in Information Technology and specialized training in medical coding and billing, I bring a unique combination of technical skills and healthcare knowledge to ensure accurate and timely reimbursements.</p>
                 </div>
             </div>
@@ -463,6 +507,48 @@
         </div>
     </section>
 
+    <!-- Specialties Section -->
+    <section id="specialties">
+        <div class="container">
+            <h2>Specialties Served</h2>
+            <div class="specialties-container" id="specialtiesContainer">
+                <div class="specialty-item">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Ambulatory Surgery</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Cardiology</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-flask"></i>
+                    <h3>Clinical Lab</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-tooth"></i>
+                    <h3>Dental Billing</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-people-carry"></i>
+                    <h3>Dermatology</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Endocrinology</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-user-nurse"></i>
+                    <h3>Family Practice</h3>
+                </div>
+                <div class="specialty-item">
+                    <i class="fas fa-hospital-alt"></i>
+                    <h3>Hospital Billing</h3>
+                </div>
+            </div>
+            <button class="load-more" id="loadMoreBtn">Load More</button>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -484,47 +570,4 @@
                 </div>
             </div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/muhammad-haris19" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.upwork.com/freelancers/~0173b68c2f6a3511ec" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Upwork_logo.svg" alt="Upwork" style="width: 30px; height: 30px;"></a>
-                <a href="https://www.fiverr.com/s/qD3LprZ" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Fiverr_Logo.svg" alt="Fiverr" style="width: 30px; height: 30px;"></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <h3>Muhammad Haris</h3>
-            <p>Certified Medical Billing Specialist</p>
-            <p class="copyright">© 2023 Muhammad Haris. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const nav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        const navLinks = document.querySelectorAll('#mainNav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                document.querySelector('header').classList.add('scrolled');
-            } else {
-                document.querySelector('header').classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+                <a href="https://www.linkedin.com/in/muhammad-h
