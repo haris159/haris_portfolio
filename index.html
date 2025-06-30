@@ -10,15 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-            --primary: #005b96;
-            --primary-light: #107dac;
-            --secondary: #00a0e1;
-            --accent: #ff7e5f;
-            --dark: #2d3436;
-            --light: #f8f9fa;
-            --light-gray: #e9ecef;
+            --primary: #3498db;
+            --primary-light: #4eb8f5;
+            --secondary: #f1c40f;
+            --accent: #e74c3c;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --light-gray: #bdc3c7;
             --success: #2ecc71;
             --danger: #e74c3c;
         }
@@ -69,7 +70,7 @@
 
         h3 {
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         p {
@@ -102,11 +103,6 @@
             transition: all 0.4s ease;
         }
 
-        header.scrolled {
-            padding: 1rem 0;
-            background-color: rgba(255, 255, 255, 0.98);
-        }
-
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -117,10 +113,6 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--accent);
         }
 
         nav ul {
@@ -137,30 +129,11 @@
             color: var(--dark);
             padding: 0.5rem 0;
             position: relative;
+            transition: color 0.3s ease;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
+        nav a:hover {
+            color: var(--accent);
         }
 
         /* Hero Section */
@@ -172,6 +145,12 @@
                         url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
             color: white;
             padding-top: 80px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero-content {
@@ -188,15 +167,6 @@
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.2rem;
             margin-bottom: 3rem;
-        }
-
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Buttons */
@@ -222,15 +192,15 @@
         }
 
         .btn-outline {
-            background: transparent;
+            background: var(--primary);
             color: white;
-            border: 2px solid white;
-            margin-left: 1rem;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
         }
 
         .btn-outline:hover {
-            background: white;
-            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
         }
 
         /* About Section */
@@ -242,10 +212,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .about-image {
-            margin-bottom: 3rem;
         }
 
         .about-content {
@@ -262,6 +228,19 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             text-align: center;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Services Section */
@@ -283,54 +262,12 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        /* Specialties Section */
-        #specialties {
-            background: var(--light-gray);
-        }
-
-        .specialties-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .specialty-item {
-            padding: 1.5rem;
-            border-radius: 8px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .specialty-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Load More Button */
-        .load-more {
-            display: block;
-            margin: 2rem auto;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-align: center;
-            transition: background 0.3s ease;
-        }
-
-        .load-more:hover {
-            background: var(--primary-light);
-        }
-
         /* Contact Section */
         #contact {
             background: var(--primary);
             color: white;
             text-align: center;
+            padding: 4rem 0;
         }
 
         #contact h2, 
@@ -378,6 +315,14 @@
         .social-links a {
             color: white;
             font-size: 1.5rem;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive */
@@ -428,7 +373,6 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#specialties">Specialties</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -439,7 +383,7 @@
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Medical Billing Specialist</h1>
+                <h1>Medical Biller</h1>
                 <p>Helping healthcare providers optimize revenue cycle management with 3+ years of experience in medical billing, denial management, and AR follow-up.</p>
                 <div>
                     <a href="#contact" class="btn btn-primary">Get Started</a>
@@ -454,9 +398,6 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-container">
-                <div class="about-image">
-                    <img src="your-profile-image.jpg" alt="Muhammad Haris" class="profile-image">
-                </div>
                 <div class="about-content">
                     <p>I am Muhammad Haris, a dedicated Medical Biller with over 3 years of experience in US healthcare billing and revenue cycle management. I specialize in helping medical practices maximize their revenue through efficient billing processes.</p>
                     <p>With a background in Information Technology and specialized training in medical coding and billing, I bring a unique combination of technical skills and healthcare knowledge to ensure accurate and timely reimbursements.</p>
@@ -471,16 +412,28 @@
             <h2>My Expertise</h2>
             <div class="skills-container">
                 <div class="skill-item">
-                    <h3>Revenue Cycle Management</h3>
-                    <p>End-to-end management of patient revenue from registration to final payment collection and reporting.</p>
+                    <h3>RCM Billing</h3>
+                    <p>Comprehensive management of the revenue cycle from patient registration to final payment.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>Denial Management</h3>
-                    <p>Analyzing and resolving claim denials to maximize reimbursement rates.</p>
+                    <h3>VOB (Verification of Benefits)</h3>
+                    <p>Ensuring accurate verification of patient insurance benefits before services are rendered.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>AR Follow-up</h3>
-                    <p>Proactive follow-up on outstanding claims to minimize aging accounts receivable.</p>
+                    <h3>AR (Accounts Receivable)</h3>
+                    <p>Management of outstanding accounts to ensure timely payments and reduce aging receivables.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Payment Posting</h3>
+                    <p>Accurate posting of payments received from insurance companies and patients.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Credentialing</h3>
+                    <p>Ensuring healthcare providers are properly credentialed with insurance companies.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Medical Coding</h3>
+                    <p>Accurate coding of diagnoses and procedures for billing and insurance purposes.</p>
                 </div>
             </div>
         </div>
@@ -503,49 +456,27 @@
                     <h3>Payment Posting</h3>
                     <p>Accurate ERA/EOB payment posting and reconciliation of patient balances.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialties Section -->
-    <section id="specialties">
-        <div class="container">
-            <h2>Specialties Served</h2>
-            <div class="specialties-container" id="specialtiesContainer">
-                <div class="specialty-item">
-                    <i class="fas fa-hospital"></i>
-                    <h3>Ambulatory Surgery</h3>
+                <div class="service-item">
+                    <h3>Denial Management</h3>
+                    <p>Thorough analysis and resolution of claim denials to ensure maximum reimbursement.</p>
                 </div>
-                <div class="specialty-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Cardiology</h3>
+                <div class="service-item">
+                    <h3>Accounts Receivable Management</h3>
+                    <p>Proactive follow-up on outstanding claims and management of aging accounts receivable.</p>
                 </div>
-                <div class="specialty-item">
-                    <i class="fas fa-flask"></i>
-                    <h3>Clinical Lab</h3>
+                <div class="service-item">
+                    <h3>Patient Billing & Collections</h3>
+                    <p>Efficient patient billing processes and follow-up on outstanding patient balances.</p>
                 </div>
-                <div class="specialty-item">
-                    <i class="fas fa-tooth"></i>
-                    <h3>Dental Billing</h3>
+                <div class="service-item">
+                    <h3>Reporting & Analytics</h3>
+                    <p>Comprehensive reporting on revenue cycle performance and analytics to identify improvement areas.</p>
                 </div>
-                <div class="specialty-item">
-                    <i class="fas fa-people-carry"></i>
-                    <h3>Dermatology</h3>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-user-md"></i>
-                    <h3>Endocrinology</h3>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-user-nurse"></i>
-                    <h3>Family Practice</h3>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-hospital-alt"></i>
-                    <h3>Hospital Billing</h3>
+                <div class="service-item">
+                    <h3>Compliance & Regulatory Support</h3>
+                    <p>Ensuring compliance with healthcare regulations and payer requirements.</p>
                 </div>
             </div>
-            <button class="load-more" id="loadMoreBtn">Load More</button>
         </div>
     </section>
 
@@ -570,4 +501,25 @@
                 </div>
             </div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/muhammad-h
+                <a href="https://www.linkedin.com/in/muhammad-haris19" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0173b68c2f6a3511ec" target="_blank" title="Upwork">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Upwork_logo.svg" alt="Upwork" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://www.fiverr.com/s/qD3LprZ" target="_blank" title="Fiverr">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Fiverr_Logo.svg" alt="Fiverr" style="width: 30px; height: 30px;">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Muhammad Haris. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammad-haris19" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0173b68c2f6a3511
